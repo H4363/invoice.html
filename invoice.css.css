@@ -1,0 +1,88 @@
+:root {
+    --bg-dark: #05070a;
+    --glass: rgba(17, 25, 40, 0.75);
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #3b82f6;
+    --danger: #ef4444;
+    --success: #10b981;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.sidebar-item.active {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, transparent 100%);
+    border-left: 3px solid var(--accent);
+    color: white;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.critical-pulse {
+    animation: pulse-red 2s infinite;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+.ai-scan-line {
+    height: 2px;
+    background: var(--accent);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 15px var(--accent);
+    animation: scan 2s linear infinite;
+    display: none;
+}
+
+@keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
